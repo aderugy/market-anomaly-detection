@@ -1,0 +1,26 @@
+# Data (never committed, always re-buildable)
+data/raw/.gitkeep
+data/clean/*
+!data/raw/.gitkeep
+!data/clean/.gitkeep
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Secrets and personal Claude Code files
+.env
+.env.*
+CLAUDE.local.md
+.claude/settings.local.json
+
+# OS
+.DS_Store
+
+.idea
