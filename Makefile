@@ -8,10 +8,13 @@ help:  ## Affiche les commandes disponibles
 setup:  ## Installe l'environnement (venv + dépendances verrouillées)
 	uv sync
 
-data: download
+data: download clean-data
 
 download:  ## Télécharge les données brutes dans data/raw/ (+ SOURCES.md)
 	$(RUN) scripts/download_data.py
+
+clean-data:
+	$(RUN) scripts/clean_data.py
 
 test:  ## Lance les tests
 	$(RUN) pytest
