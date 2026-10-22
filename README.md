@@ -41,7 +41,7 @@ We need to distinguish the following movements :
 1. The closing market price (all books, $t = 71$) is a good estimator of the probability of an outcome
 2. A book $b$ is declared late if the following conditions are met. That's the baseline
    3. $|\Delta m| \gt \delta$: The market has moved
-   4. $z_{b, i}(t) \gt z^{\star}$: The deviation from the market priced is significant
+   4. $|z_{b, i}(t)| \gt z^{\star}$: The deviation from the market priced is significant
    5. $\frac{\Delta p}{\Delta m} \lt \rho$: The book didn't follow the market
 
 ## Run
