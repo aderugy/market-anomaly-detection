@@ -38,7 +38,7 @@ We need to distinguish the following movements :
 
 ### Hypotheses
 
-1. The closing market price (all books, $t = 71$) is a good estimator of the probability of an outcome
+1. The closing market price (all books, $t = 72$) is a good estimator of the probability of an outcome
 2. A book $b$ is declared late if the following conditions are met. That's the baseline
    3. $|\Delta m| \gt \delta$: The market has moved
    4. $|z_{b, i}(t)| \gt z^{\star}$: The deviation from the market priced is significant
@@ -64,6 +64,8 @@ The data contains five CSV tables :
 - odds_series_b
 - odds_series_b_matches
 
+Step = 71 is the closing odd.
+
 ### Step 2: Data Cleaning (ELT Pipeline)
 
 We load the raw CSVs into a DuckDB.
@@ -74,6 +76,9 @@ We replace NaN with NULL to avoid surprises when aggregating.
 
 For all tables: we apply the classic transformations
 - Trimming text columns
+
+Edge cases:
+- Some markets at some step t are not fully quoted by some bookmakers. Need to decide whether to remove them or not.
 
 ### Step 3: Data validation
 
